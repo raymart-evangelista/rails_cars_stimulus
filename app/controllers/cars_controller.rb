@@ -9,7 +9,6 @@ class CarsController < ApplicationController
 
   def new
     @car = Car.new
-    @car.variants.build
   end
 
   def create
@@ -24,6 +23,7 @@ class CarsController < ApplicationController
 
   def edit
     @car = Car.find(params[:id])
+    @car.variants.build
   end
 
   def update

@@ -1,14 +1,11 @@
-<h1><%= @car.name %></h1>
-
-<h1>$<%= @car.price %></h1>
+<h1><%= @car.name %>, $<%= @car.price %></h1>
 
 <ul>
   <% if @car.variants.any? %>
     <h1>Variants</h1>
     <li>
-    <% @car.vairants.each do |variant| %>
-      <h2><%= variant.name %></h2>
-      <h2><%= variant.price %></h2>
+    <% @car.variants.each do |variant| %>
+      <h2><%= variant.name %>, $<%= variant.price %></h2>
     <% end %>
     </li>
   <% end %>

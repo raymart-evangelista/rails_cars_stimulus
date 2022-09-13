@@ -11,6 +11,16 @@
     <br>
   </div>
 
+  <br>
+  <h1>Variant Form</h1>
+  <div>
+    <%= form.fields_for car do |variants_form| %>
+      <%= variants_form.text_field :name %>
+      <%= variants_form.text_field :price %>
+    <% end %>
+  </div>
+  <br>
+
   <div>
     <%= form.submit %>
   </div>

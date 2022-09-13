@@ -7,8 +7,9 @@ export default class extends Controller {
     // this.element.textContent = "Hello World!"
   }
 
-  addFields() {
-    this.hideCurrentElem()
+  showFields() {
+    // this.hideCurrentElem()
+    this.hideableTarget.hidden = false
   }
 
   hideCurrentElem() {

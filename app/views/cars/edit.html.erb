@@ -1,1 +1,30 @@
-<%= render "form", car: @car %>
+<%= form_with model: @car do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <br>
+  </div>
+
+  <div>
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+    <br>
+  </div>
+
+  <div data-controller="add-variant">
+    <div data-add-variant-target="hideable" hidden>
+      <%= form.fields_for :variants do |variant_fields| %>
+        Variant name: <%= variant_fields.text_field :name %>
+        Variant price: <%= variant_fields.text_field :price %>
+        <br>
+      <% end %>
+    </div>
+    <%= button_tag "Add variant", type: "button",
+    data: { "action": "add-variant#showFields" }%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
